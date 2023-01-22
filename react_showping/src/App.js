@@ -17,18 +17,17 @@ function App() {
       <div className="app_left">
         <Header></Header>
       </div>
-
       <div className="app_right">
         <Route path="/" exact={true} component={Home}></Route>
-        <Route path="/user/Login" exact={true} component={LoginPage}></Route>
+        <Route path="/Login" exact={true} component={LoginPage}></Route>
         <Route
-          path="/user/UserSaveForm"
+          path="/UserSaveForm"
           exact={true}
           component={UserSaveForm}
         ></Route>
-        <Route path="/user/Mypage" exact={true} component={Mypage}></Route>
+        <Route path="/Mypage" exact={true} component={Mypage}></Route>
         <Route
-          path="/ItemManage/ItemSaveForm"
+          path="/ItemSaveForm"
           exact={true}
           component={ItemSaveForm}
         ></Route>
@@ -38,7 +37,7 @@ function App() {
           component={ProductDetail}
         ></Route>
         <Route
-          path="/ItemManage/updateForm/:id"
+          path="/updateForm/:id"
           exact={true}
           component={UpdateForm}
         ></Route>

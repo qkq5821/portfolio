@@ -7,7 +7,6 @@ const Header = () => {
   return (
     <div className="header_navbar">
       <div className="header_logo">HC MARKET</div>
-
       {sessionStorage.getItem('sessionid') != null ? (
         <div className="header_font">
           {sessionStorage.getItem('sessionid')} 님 환영합니다.
@@ -27,7 +26,7 @@ const Header = () => {
       </div>
       {sessionStorage.getItem('sessionid') == ('' || null) ? (
         <div>
-          <Link to="/user/UserSaveForm" className="navbar-brand">
+          <Link to="/UserSaveForm" className="navbar-brand">
             회원가입
           </Link>
         </div>
@@ -41,13 +40,13 @@ const Header = () => {
 
       {sessionStorage.getItem('sessionid') == null ? (
         <div>
-          <Link to="/user/Login" className="navbar-brand">
+          <Link to="/Login" className="navbar-brand">
             로그인
           </Link>
         </div>
       ) : (
         <div>
-          <Link to="/user/Mypage" className="navbar-brand">
+          <Link to="/Mypage" className="navbar-brand">
             마이 페이지
           </Link>
         </div>
