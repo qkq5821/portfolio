@@ -51,7 +51,7 @@ const Cart = (props) => {
           orderlist,
         )
         .then(() => {
-          props.history.push('/user/Mypage');
+          props.history.push('/Mypage');
         });
     }
   };

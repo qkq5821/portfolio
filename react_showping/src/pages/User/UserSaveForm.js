@@ -1,12 +1,13 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
+import { useForm } from 'react-hook-form';
 import Post from '../../Components/PostAPI';
 
 function UserSaveForm(props) {
   const [dupleid, setdupleid] = useState(0);
   const [popup, setPopup] = useState(false);
-  const handleComplete = (data) => {
+  const handleComplete = () => {
     setPopup(!popup);
   };
   const [user, setuser] = useState({
@@ -22,16 +23,16 @@ function UserSaveForm(props) {
   });
 
   const inputuser = (e) => {
-    if (e.target.name === 'userid' && e.target.value.length === 10) {
+    if (e.target.name === 'userid' && e.target.value.length > 9) {
       alert('아이디는 10자 이내로 해주세요');
     } else if (
       (e.target.name === 'userpw' || e.target.name === 'userpw2') &&
-      e.target.value.length === 15
+      e.target.value.length > 14
     ) {
       alert('비밀번호는 15자 이내로 해주세요');
-    } else if (e.target.name === 'username' && e.target.value.length === 8) {
+    } else if (e.target.name === 'username' && e.target.value.length > 8) {
       alert('이름은 8자 이내로 제한됩니다.');
-    } else if (e.target.name === 'address2' && e.target.value.length === 25) {
+    } else if (e.target.name === 'address2' && e.target.value.length > 25) {
       alert('상세주소는 25자 이내로 제한됩니다.');
     } else if (
       (e.target.name === 'phone2' || e.target.name === 'phone3') &&
@@ -96,7 +97,7 @@ function UserSaveForm(props) {
         )
         .then(() => {
           alert('회원가입 되었습니다.');
-          window.location.href = '/';
+          window.location.href = '/Login';
         });
     }
   };

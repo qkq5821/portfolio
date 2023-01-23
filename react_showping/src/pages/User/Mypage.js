@@ -8,7 +8,7 @@ import Post from '../../Components/PostAPI';
 function UserSaveForm(props) {
   const id = sessionStorage.getItem('sessionid');
   const history = useHistory();
-  const [tab, settab] = useState(0);
+  const [tab, settab] = useState(1);
   const [popup, setPopup] = useState(false);
   const handleComplete = () => {
     setPopup(!popup);
@@ -94,7 +94,7 @@ function UserSaveForm(props) {
           user,
         )
         .then(() => {
-          history.push('/');
+          history.push('/Mypage');
         })
         .then(alert('회원정보수정이 되었습니다.'));
     }
@@ -277,7 +277,6 @@ function UserSaveForm(props) {
         <Orderlist
           orderlist={orderlist}
           setorderlist={setorderlist}
-          dele
         ></Orderlist>
       )}
     </div>

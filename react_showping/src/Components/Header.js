@@ -2,8 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
-  sessionStorage.getItem('sessionid');
-
   return (
     <div className="header_navbar">
       <div className="header_logo">HC MARKET</div>
@@ -24,13 +22,13 @@ const Header = () => {
           장바구니
         </Link>
       </div>
-      {sessionStorage.getItem('sessionid') == ('' || null) ? (
+      {sessionStorage.getItem('sessionid') === ('' || null) ? (
         <div>
           <Link to="/UserSaveForm" className="navbar-brand">
             회원가입
           </Link>
         </div>
-      ) : sessionStorage.getItem('sessionid') == 'qkq5821' ? (
+      ) : sessionStorage.getItem('sessionid') === 'qkq5821' ? (
         <div>
           <Link to="/ItemManage" className="navbar-brand">
             상품관리
